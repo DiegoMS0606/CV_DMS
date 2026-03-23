@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fernando Carbajal Sánchez | CV</title>
+  <style>
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+    }
+
+    body{
+      font-family: Arial, Helvetica, sans-serif;
+      background:#dfe3e8;
+      color:#1f1f1f;
+    }
+
+    .cv{
+      max-width: 1100px;
+      margin: 0 auto;
+      background:#f4f4f4;
+      min-height:100vh;
+      border-bottom: 5px solid #0b4f7c;
+    }
+
+    .header{
+      position:relative;
+      color:#fff;
+      padding:28px 30px 24px;
+      background:
+        linear-gradient(rgba(60,115,150,0.78), rgba(118,171,201,0.78)),
+        url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1200&q=80');
+      background-size:cover;
+      background-position:center;
+      min-height:170px;
+      overflow:hidden;
+    }
+
+    .header h1{
+      font-size: 2.2rem;
+      font-weight: 800;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      max-width: 70%;
+      line-height: 1.2;
+    }
+
+    .header h2{
+      margin-top:8px;
+      font-size: 1.1rem;
+      font-weight: 700;
+      letter-spacing: .5px;
+      text-transform: uppercase;
+      max-width: 70%;
+    }
+
+    .profile-pic{
+      position:absolute;
+      right:24px;
+      top:18px;
+      width:140px;
+      height:140px;
+      border-radius:50%;
+      overflow:hidden;
+      border:5px solid #fff;
+      background:#fff;
+      box-shadow:0 6px 18px rgba(0,0,0,0.18);
+    }
+
+    .profile-pic img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      display:block;
+    }
+
+    .contact-bar{
+      display:flex;
+      flex-wrap:wrap;
+      gap:18px;
+      align-items:center;
+      background:#fff;
+      padding:10px 18px;
+      border-bottom:1px solid #d2d6db;
+      font-size:.98rem;
+      font-weight:700;
+      color:#133b5c;
+    }
+
+    .contact-item{
+      display:flex;
+      align-items:center;
+      gap:7px;
+    }
+
+    .content{
+      display:grid;
+      grid-template-columns: 31% 69%;
+      gap:22px;
+      padding:18px;
+    }
+
+    .left-column{
+      padding-right:6px;
+    }
+
+    .right-column{
+      padding-left:6px;
+    }
+
+    .section{
+      margin-bottom:22px;
+    }
+
+    .section-title{
+      font-size:1.05rem;
+      font-weight:800;
+      color:#0b4f7c;
+      text-transform:uppercase;
+      margin-bottom:10px;
+      letter-spacing:.4px;
+      display:flex;
+      align-items:center;
+      gap:8px;
+    }
+
+    .section-title::before{
+      content:"•";
+      color:#0b4f7c;
+      font-size:1.35rem;
+      line-height:1;
+    }
+
+    .about-text{
+      font-size:1rem;
+      line-height:1.9;
+      text-align:justify;
+      font-weight:700;
+    }
+
+    .simple-list{
+      list-style:none;
+      padding-left:0;
+    }
+
+    .simple-list li{
+      margin-bottom:5px;
+      font-size:1rem;
+      position:relative;
+      padding-left:14px;
+    }
+
+    .simple-list li::before{
+      content:"•";
+      position:absolute;
+      left:0;
+      top:0;
+      color:#0b4f7c;
+      font-weight:bold;
+    }
+
+    .entry{
+      margin-bottom:20px;
+    }
+
+    .entry-header{
+      display:grid;
+      grid-template-columns: 1fr auto;
+      gap:12px;
+      align-items:start;
+      margin-bottom:4px;
+    }
+
+    .entry-title{
+      font-size:1.05rem;
+      font-weight:800;
+      color:#1f1f1f;
+    }
+
+    .entry-date{
+      font-size:.95rem;
+      font-weight:800;
+      color:#1f1f1f;
+      white-space:nowrap;
+    }
+
+    .entry-subtitle{
+      font-size:1.02rem;
+      font-weight:700;
+      margin-bottom:8px;
+      color:#2d2d2d;
+    }
+
+    .entry-place{
+      font-size:1rem;
+      margin-bottom:8px;
+      color:#444;
+    }
+
+    .detail-list{
+      margin-left:18px;
+      line-height:1.6;
+    }
+
+    .detail-list li{
+      margin-bottom:4px;
+      text-align:justify;
+    }
+
+    @media (max-width: 850px){
+      .header h1,
+      .header h2{
+        max-width:100%;
+      }
+
+      .profile-pic{
+        position:static;
+        margin:18px auto 0;
+      }
+
+      .header{
+        text-align:center;
+      }
+
+      .content{
+        grid-template-columns:1fr;
+      }
+    }
+
+    @media (max-width: 600px){
+      .header h1{
+        font-size:1.7rem;
+      }
+
+      .header h2{
+        font-size:1rem;
+      }
+
+      .contact-bar{
+        flex-direction:column;
+        align-items:flex-start;
+        gap:8px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="cv">
+
+    <header class="header">
+      <h1>Fernando Carbajal Sánchez</h1>
+      <h2>Licenciatura en Ingeniería en Computación</h2>
+
+      <div class="profile-pic">
+        <img src="../../img/fernando.jpeg" alt="Fernando Carbajal Sánchez">
+      </div>
+    </header>
+
+    <div class="contact-bar">
+      <div class="contact-item">📞 <span>(52) 5624942060</span></div>
+      <div class="contact-item">✉️ <span>fercarsan2112@gmail.com</span></div>
+      <div class="contact-item">📍 <span>Zinacantepec, Edo de Méx</span></div>
+    </div>
+
+    <main class="content">
+
+      <aside class="left-column">
+        <section class="section">
+          <h3 class="section-title">Sobre mí</h3>
+          <p class="about-text">
+            Soy una persona resiliente y optimista. Me apasiona la tecnología y el desarrollo de
+            soluciones innovadoras. Enfocado en fortalecer mis habilidades en ingeniería en computación,
+            busco contribuir al crecimiento de los proyectos en los que participe y continuar mi
+            desarrollo técnico y personal.
+          </p>
+        </section>
+
+        <section class="section">
+          <h3 class="section-title">Idiomas</h3>
+          <ul class="simple-list">
+            <li>Inglés B2</li>
+          </ul>
+        </section>
+
+        <section class="section">
+          <h3 class="section-title">Habilidades</h3>
+          <ul class="simple-list">
+            <li>Trabajo en equipo</li>
+            <li>Adaptabilidad</li>
+            <li>Confidencialidad</li>
+            <li>Comunicación efectiva</li>
+            <li>Perseverancia</li>
+          </ul>
+        </section>
+
+        <section class="section">
+          <h3 class="section-title">Software</h3>
+          <ul class="simple-list">
+            <li>Java</li>
+            <li>Python</li>
+            <li>MySQL</li>
+            <li>HTML y CSS</li>
+            <li>C</li>
+            <li>C++</li>
+            <li>Microsoft Office</li>
+            <li>Power BI</li>
+            <li>Power Automate</li>
+          </ul>
+        </section>
+      </aside>
+
+      <section class="right-column">
+
+        <section class="section">
+          <h3 class="section-title">Educación</h3>
+          <div class="entry">
+            <div class="entry-header">
+              <div class="entry-title">Licenciatura en Ingeniería en Computación</div>
+              <div class="entry-date">2022 - Presente</div>
+            </div>
+            <div class="entry-place">Universidad Autónoma del Estado de México</div>
+          </div>
+        </section>
+
+        <section class="section">
+          <h3 class="section-title">Experiencia / Proyectos</h3>
+
+          <div class="entry">
+            <div class="entry-header">
+              <div class="entry-title">Recomendador de Películas</div>
+              <div class="entry-date">2024 - 2025</div>
+            </div>
+            <div class="entry-subtitle">Líder de Proyecto</div>
+            <ul class="detail-list">
+              <li>Desarrollo de un sistema de recomendación de películas en Python con enfoque en personalización.</li>
+              <li>Implementación de un motor de recomendaciones basado en preferencias del usuario.</li>
+              <li>Generación de resultados personalizados mediante análisis de características e intereses.</li>
+              <li>Diseño de módulos para recopilar y organizar información relevante del sistema.</li>
+              <li>Aplicación de mejoras iterativas para optimizar la precisión de las recomendaciones.</li>
+            </ul>
+          </div>
+
+          <div class="entry">
+            <div class="entry-header">
+              <div class="entry-title">Agenda de Salas de Cómputo</div>
+              <div class="entry-date">2023 - 2024</div>
+            </div>
+            <div class="entry-subtitle">Líder de Proyecto</div>
+            <ul class="detail-list">
+              <li>Análisis de requisitos y elaboración de diagramas UML para estructurar el sistema.</li>
+              <li>Diseño e implementación de una base de datos utilizando el modelo entidad-relación.</li>
+              <li>Desarrollo del proyecto con Java y apoyo en la organización de módulos funcionales.</li>
+              <li>Automatización de reportes en Excel y análisis de datos para apoyar la gestión de salas.</li>
+            </ul>
+          </div>
+
+          <div class="entry">
+            <div class="entry-header">
+              <div class="entry-title">Sistema de Gestión para Veterinaria</div>
+              <div class="entry-date">2023 - 2024</div>
+            </div>
+            <div class="entry-subtitle">Líder de Proyecto</div>
+            <ul class="detail-list">
+              <li>Desarrollo de una aplicación CRUD para la gestión de clientes, mascotas, consultas y facturación.</li>
+              <li>Diseño e implementación de base de datos con MySQL y diagramas entidad-relación.</li>
+              <li>Creación de interfaz gráfica con Java para mejorar la experiencia del usuario.</li>
+              <li>Optimización de consultas SQL y validaciones para mejorar la eficiencia del sistema.</li>
+              <li>Generación de reportes en Excel para el análisis de información administrativa.</li>
+            </ul>
+          </div>
+        </section>
+
+      </section>
+
+    </main>
+  </div>
+</body>
+</html>
