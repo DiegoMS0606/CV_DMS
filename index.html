@@ -2,81 +2,479 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8" />
-    <title>CVs de la Clase</title>
+    <title>Portafolio Grupal | Tecnologías Computacionales I</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="css/styles.css">
+    <style>
+        /* Estilos adicionales para el sistema de filtrado (compatible con los estilos existentes) */
+        
+        /* Contenedor de filtros */
+        .filtros-container {
+            background: #1e293b;
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin: 2rem 0;
+            border: 1px solid #334155;
+        }
+        
+        .filtros-container h3 {
+            color: #38bdf8;
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+            text-align: center;
+        }
+        
+        .filtros-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 0.6rem;
+        }
+        
+        .filtro-boton {
+            background: #334155;
+            border: none;
+            padding: 0.5rem 1.2rem;
+            border-radius: 40px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            color: #e2e8f0;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            font-family: inherit;
+        }
+        
+        .filtro-boton:hover {
+            background: #38bdf8;
+            color: #0f172a;
+            transform: translateY(-2px);
+        }
+        
+        .filtro-boton.activo {
+            background: #38bdf8;
+            color: #0f172a;
+            box-shadow: 0 2px 8px rgba(56,189,248,0.3);
+        }
+        
+        .reset-btn {
+            background: #475569;
+        }
+        
+        .reset-btn:hover {
+            background: #38bdf8;
+        }
+        
+        /* Ocultar tarjetas */
+        .card-index.oculto {
+            display: none;
+        }
+        
+        /* Etiquetas de habilidades debajo de cada tarjeta */
+        .skills-tags {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 0.5rem;
+            margin-top: 1rem;
+            padding-top: 0.8rem;
+            border-top: 1px solid #334155;
+        }
+        
+        .skill-tag {
+            display: inline-block;
+            background: #0f172a;
+            padding: 0.25rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.7rem;
+            font-weight: 500;
+            color: #38bdf8;
+            border: 1px solid #38bdf8;
+        }
+        
+        /* Contador de resultados */
+        .contador-filtro {
+            text-align: center;
+            margin-top: 1rem;
+            font-size: 0.85rem;
+            color: #94a3b8;
+        }
+        
+        /* Mantener consistencia con las tarjetas */
+        .card-index {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .card-index a {
+            flex: 1;
+        }
+        
+        /* Ajuste responsive para etiquetas */
+        @media (max-width: 600px) {
+            .skill-tag {
+                font-size: 0.65rem;
+                padding: 0.2rem 0.6rem;
+            }
+            
+            .filtros-buttons {
+                gap: 0.4rem;
+            }
+            
+            .filtro-boton {
+                padding: 0.4rem 0.8rem;
+                font-size: 0.75rem;
+            }
+        }
+    </style>
 </head>
 
 <body class="home">
-    <header>
-        <h1>CVs de la Clase Tecnologías Computacionales I</h1>
-        <p>Repositorio de curriculums</p>
+    <header class="main-header">
+        <div class="header-content">
+            <h1>Portafolio Grupal</h1>
+            <p>Tecnologías Computacionales I</p>
+            <p>Ingeniería en Computación | Facultad de Ingeniería | UAEMex</p>
+        </div>
     </header>
 
     <main class="container">
-        <div class="grid">
 
-            <div class="card-index">
+        <section class="hero-section">
+            <div class="hero-text">
+                <h2>Bienvenidos a nuestro portafolio</h2>
+                <p>
+                    Este sitio web presenta de manera general a los integrantes del grupo
+                    de Tecnologías Computacionales I de la carrera de Ingeniería en Computación
+                    de la Facultad de Ingeniería de la UAEMex.
+                </p>
+                <p>
+                    Aquí se muestran nuestros perfiles, habilidades técnicas, formación académica,
+                    proyectos y áreas de interés, con el propósito de reflejar nuestro desarrollo
+                    académico y profesional.
+                </p>
+            </div>
+        </section>
+
+        <section class="info-section">
+            <h2>Sobre el grupo</h2>
+            <p>
+                Somos estudiantes de Ingeniería en Computación con interés en distintas áreas
+                de la tecnología, entre ellas el desarrollo web, la programación, las bases
+                de datos, las redes, el soporte técnico y el uso de herramientas colaborativas
+                para la construcción de proyectos.
+            </p>
+        </section>
+
+        <section class="info-section">
+            <h2>Objetivo del portafolio</h2>
+            <p>
+                El objetivo de este portafolio grupal es presentar de forma organizada los
+                perfiles de los integrantes, así como sus habilidades, conocimientos, formación
+                y proyectos, integrando en un solo espacio la información académica y técnica
+                del equipo.
+            </p>
+        </section>
+
+        <section class="info-section">
+            <h2>Áreas y habilidades generales</h2>
+            <div class="skills-grid">
+                <span>Desarrollo Web</span>
+                <span>HTML</span>
+                <span>CSS</span>
+                <span>JavaScript</span>
+                <span>Python</span>
+                <span>Java</span>
+                <span>Bases de Datos</span>
+                <span>MySQL</span>
+                <span>PostgreSQL</span>
+                <span>Linux</span>
+                <span>Git y GitHub</span>
+                <span>Redes</span>
+                <span>Soporte Técnico</span>
+                <span>Mantenimiento de Equipos</span>
+                <span>Trabajo en Equipo</span>
+            </div>
+        </section>
+
+        <section class="info-section">
+            <h2>Nuestro enfoque</h2>
+            <p>
+                Este portafolio no solo funciona como una presentación del grupo, sino también
+                como una evidencia de nuestras competencias, intereses y evolución en el área
+                de tecnologías computacionales.
+            </p>
+        </section>
+
+        <!-- ÁREA DE FILTROS POR HABILIDADES -->
+        <div class="filtros-container">
+            <h3>🔍 Filtrar por habilidad</h3>
+            <div class="filtros-buttons">
+                <button class="filtro-boton reset-btn activo" data-skill="todos">📋 Todos</button>
+                <button class="filtro-boton" data-skill="Desarrollo Web">🌐 Desarrollo Web</button>
+                <button class="filtro-boton" data-skill="HTML">📄 HTML</button>
+                <button class="filtro-boton" data-skill="CSS">🎨 CSS</button>
+                <button class="filtro-boton" data-skill="JavaScript">🟨 JavaScript</button>
+                <button class="filtro-boton" data-skill="Python">🐍 Python</button>
+                <button class="filtro-boton" data-skill="Java">☕ Java</button>
+                <button class="filtro-boton" data-skill="Bases de Datos">🗄️ Bases de Datos</button>
+                <button class="filtro-boton" data-skill="MySQL">🐬 MySQL</button>
+                <button class="filtro-boton" data-skill="PostgreSQL">🐘 PostgreSQL</button>
+                <button class="filtro-boton" data-skill="Linux">🐧 Linux</button>
+                <button class="filtro-boton" data-skill="Git y GitHub">🔀 Git/GitHub</button>
+                <button class="filtro-boton" data-skill="Redes">🌐 Redes</button>
+                <button class="filtro-boton" data-skill="Soporte Técnico">🛠️ Soporte Técnico</button>
+                <button class="filtro-boton" data-skill="Mantenimiento de Equipos">⚙️ Mantenimiento</button>
+                <button class="filtro-boton" data-skill="Trabajo en Equipo">🤝 Trabajo en Equipo</button>
+            </div>
+            <div class="contador-filtro" id="contador-resultados">Mostrando todos los integrantes</div>
+        </div>
+
+        <section class="members-section">
+            <h2>Integrantes</h2>
+            <div class="grid" id="grid-integrantes">
+
+            <!-- Diego Miguel Segundo -->
+            <div class="card-index" data-skills="Desarrollo Web,HTML,CSS,JavaScript">
                 <a href="cv/dms/">
                     <img src="img/dms.jpeg" alt="Diego Miguel Segundo">
                     <h3>Diego Miguel Segundo</h3>
                 </a>
+                <div class="skills-tags">
+                    <span class="skill-tag">🌐 Desarrollo Web</span>
+                    <span class="skill-tag">📄 HTML</span>
+                    <span class="skill-tag">🎨 CSS</span>
+                    <span class="skill-tag">🟨 JavaScript</span>
+                </div>
             </div>
 
-            <div class="card-index">
+            <!-- Diana Ivon Benitez Gonzalez -->
+            <div class="card-index" data-skills="Desarrollo Web,HTML,CSS">
                 <a href="cv/dibg/">
                     <img src="img/dibg.jpeg" alt="Diana Ivon Benitez Gonzalez">
                     <h3>Diana Ivon Benitez Gonzalez</h3>
                 </a>
+                <div class="skills-tags">
+                    <span class="skill-tag">🌐 Desarrollo Web</span>
+                    <span class="skill-tag">📄 HTML</span>
+                    <span class="skill-tag">🎨 CSS</span>
+                </div>
             </div>
-<<<<<<< HEAD
-            <div class="card-index">
-                <a href="cv/dibg/">
-                    <img src="img/CS.jpeg" alt="Carlos Miguel Solano">
-                    <h3>Carlos Miguel Solano</h3>
-=======
-            
-            <div class="card-index">
+
+            <!-- Jessica Mijal Lopez De Jesus -->
+            <div class="card-index" data-skills="Desarrollo Web,HTML,CSS">
                 <a href="cv/Mijal/">
                     <img src="img/Mijal.jpeg" alt="Jessica Mijal Lopez De Jesus">
                     <h3>Jessica Mijal Lopez De Jesus</h3>
                 </a>
+                <div class="skills-tags">
+                    <span class="skill-tag">🌐 Desarrollo Web</span>
+                    <span class="skill-tag">📄 HTML</span>
+                    <span class="skill-tag">🎨 CSS</span>
+                </div>
+            </div>
+            
+            <!-- CARLOS MIGUEL SOLANO - CON TUS HABILIDADES DEL CV -->
+            <div class="card-index" data-skills="Desarrollo Web,HTML,CSS,JavaScript,Java,Bases de Datos,MySQL,PostgreSQL,Git y GitHub">
+                <a href="cv/carlos/">
+                    <img src="img/CS.jpeg" alt="Carlos Miguel Solano">
+                    <h3>Carlos Miguel Solano</h3>
+                </a>
+                <div class="skills-tags">
+                    <span class="skill-tag">🌐 Desarrollo Web</span>
+                    <span class="skill-tag">📄 HTML</span>
+                    <span class="skill-tag">🎨 CSS</span>
+                    <span class="skill-tag">🟨 JavaScript</span>
+                    <span class="skill-tag">☕ Java</span>
+                    <span class="skill-tag">🗄️ Bases de Datos</span>
+                    <span class="skill-tag">🐬 MySQL</span>
+                    <span class="skill-tag">🐘 PostgreSQL</span>
+                    <span class="skill-tag">🔀 Git/GitHub</span>
+                </div>
             </div>
 
-            <div class="card-index">
+            <!-- Haide Sanchez Gutierrez -->
+            <div class="card-index" data-skills="Desarrollo Web,HTML,CSS">
                 <a href="cv/Haide/">
                     <img src="img/hsg.jpeg" alt="Haide Sanchez Gutierrez">
                     <h3>Haide Sánchez Gutiérrez</h3>
                 </a>
+                <div class="skills-tags">
+                    <span class="skill-tag">🌐 Desarrollo Web</span>
+                    <span class="skill-tag">📄 HTML</span>
+                    <span class="skill-tag">🎨 CSS</span>
+                </div>
             </div>
 
-            <div class="card-index">
+            <!-- Aram Gonzalez Ronquillo -->
+            <div class="card-index" data-skills="Desarrollo Web,HTML,CSS,JavaScript">
                 <a href="cv/aram/">
                     <img src="img/aram.jpeg" alt="Aram Gonzalez Ronquillo">
                     <h3>Aram Gonzalez Ronquillo</h3>
                 </a>
+                <div class="skills-tags">
+                    <span class="skill-tag">🌐 Desarrollo Web</span>
+                    <span class="skill-tag">📄 HTML</span>
+                    <span class="skill-tag">🎨 CSS</span>
+                    <span class="skill-tag">🟨 JavaScript</span>
+                </div>
             </div>
-            <div class="card-index">
+
+            <!-- Alejandra Hernández -->
+            <div class="card-index" data-skills="Desarrollo Web,HTML,CSS,Bases de Datos,MySQL">
                 <a href="cv/alejandra/">
                     <img src="img/alejandra.jpg" alt="Alejandra Hernández">
                     <h3>Alejandra Hernández</h3>
                 </a>
+                <div class="skills-tags">
+                    <span class="skill-tag">🌐 Desarrollo Web</span>
+                    <span class="skill-tag">📄 HTML</span>
+                    <span class="skill-tag">🎨 CSS</span>
+                    <span class="skill-tag">🗄️ Bases de Datos</span>
+                    <span class="skill-tag">🐬 MySQL</span>
+                </div>
             </div>
 
-            <div class="card-index">
+            <!-- David Emanuel Vaca Gómez -->
+            <div class="card-index" data-skills="Desarrollo Web,HTML,CSS,JavaScript,Python,Linux,Redes,Soporte Técnico">
                 <a href="cv/David/">
                     <img src="img/david.jpeg" alt="David Emanuel Vaca Gómez">
                     <h3>David Emanuel Vaca Gómez</h3>
->>>>>>> f18dd37b87f65623d1165a27d1b86d3f43a53697
                 </a>
+                <div class="skills-tags">
+                    <span class="skill-tag">🌐 Desarrollo Web</span>
+                    <span class="skill-tag">📄 HTML</span>
+                    <span class="skill-tag">🎨 CSS</span>
+                    <span class="skill-tag">🟨 JavaScript</span>
+                    <span class="skill-tag">🐍 Python</span>
+                    <span class="skill-tag">🐧 Linux</span>
+                    <span class="skill-tag">🌐 Redes</span>
+                    <span class="skill-tag">🛠️ Soporte Técnico</span>
+                </div>
+            </div>
+               
+            <!-- Ismael Mendoza López -->
+            <div class="card-index" data-skills="Desarrollo Web,HTML,CSS,JavaScript,PHP,Bases de Datos,MySQL">
+                <a href="cv/Ismael/">
+                    <img src="img/ismael.jpg" alt="Ismael Mendoza López">
+                    <h3>Ismael Mendoza López</h3>
+                </a>
+                <div class="skills-tags">
+                    <span class="skill-tag">🌐 Desarrollo Web</span>
+                    <span class="skill-tag">📄 HTML</span>
+                    <span class="skill-tag">🎨 CSS</span>
+                    <span class="skill-tag">🟨 JavaScript</span>
+                    <span class="skill-tag">🐘 PHP</span>
+                    <span class="skill-tag">🗄️ Bases de Datos</span>
+                    <span class="skill-tag">🐬 MySQL</span>
+                </div>
             </div>
 
-        </div>
+            <!-- Adrian Portillo Moreno -->
+            <div class="card-index" data-skills="Soporte Técnico,Mantenimiento de Equipos,Redes,Linux">
+                <a href="cv/Adrian/">
+                    <img src="img/adrian.jpg" alt="Adrian Portillo Moreno">
+                    <h3>Adrian Portillo Moreno</h3>
+                </a>
+                <div class="skills-tags">
+                    <span class="skill-tag">🛠️ Soporte Técnico</span>
+                    <span class="skill-tag">⚙️ Mantenimiento</span>
+                    <span class="skill-tag">🌐 Redes</span>
+                    <span class="skill-tag">🐧 Linux</span>
+                </div>
+            </div>
+
+            <!-- Jose Gabriel Sanchez Gil -->
+            <div class="card-index" data-skills="Desarrollo Web,HTML,CSS,JavaScript,PHP,Bases de Datos,MySQL">
+                <a href="cv/Gabriel/">
+                    <img src="img/gabo.jpg" alt="Jose Gabriel Sanchez Gil">
+                    <h3>José Gabriel Sanchez Gil</h3>
+                </a>
+                <div class="skills-tags">
+                    <span class="skill-tag">🌐 Desarrollo Web</span>
+                    <span class="skill-tag">📄 HTML</span>
+                    <span class="skill-tag">🎨 CSS</span>
+                    <span class="skill-tag">🟨 JavaScript</span>
+                    <span class="skill-tag">🐘 PHP</span>
+                    <span class="skill-tag">🗄️ Bases de Datos</span>
+                    <span class="skill-tag">🐬 MySQL</span>
+                </div>
+            </div>
+
+            <!-- Ian Eduardo Burrola Gutierrez -->
+            <div class="card-index" data-skills="Python,Java,Bases de Datos,MySQL,PostgreSQL,Git y GitHub">
+                <a href="cv/ian/">
+                    <img src="img/ian.jpg" alt="Ian Eduardo Burrola Gutierrez">
+                    <h3>Ian Eduardo Burrola Gutierrez</h3>
+                </a>
+                <div class="skills-tags">
+                    <span class="skill-tag">🐍 Python</span>
+                    <span class="skill-tag">☕ Java</span>
+                    <span class="skill-tag">🗄️ Bases de Datos</span>
+                    <span class="skill-tag">🐬 MySQL</span>
+                    <span class="skill-tag">🐘 PostgreSQL</span>
+                    <span class="skill-tag">🔀 Git/GitHub</span>
+                </div>
+            </div>
+
+            </div>
+        </section>
+
     </main>
 
     <footer>
-        <p>Universidad Autónoma del Estado de México</p>
+        <p>Portafolio grupal | Tecnologías Computacionales I | Ingeniería en Computación | UAEMex</p>
     </footer>
+
+    <script>
+        // Sistema de filtrado por habilidades
+        const filtros = document.querySelectorAll('.filtro-boton');
+        const tarjetas = document.querySelectorAll('.card-index');
+        const contadorSpan = document.getElementById('contador-resultados');
+        
+        function filtrarPorSkill(skillSeleccionada) {
+            let contadorVisibles = 0;
+            
+            tarjetas.forEach(tarjeta => {
+                const skillsTarjeta = tarjeta.getAttribute('data-skills');
+                
+                if (skillSeleccionada === 'todos') {
+                    tarjeta.classList.remove('oculto');
+                    contadorVisibles++;
+                } else {
+                    // Buscar si la skill seleccionada está en las skills de la tarjeta
+                    if (skillsTarjeta && skillsTarjeta.split(',').map(s => s.trim()).includes(skillSeleccionada)) {
+                        tarjeta.classList.remove('oculto');
+                        contadorVisibles++;
+                    } else {
+                        tarjeta.classList.add('oculto');
+                    }
+                }
+            });
+            
+            // Actualizar contador
+            if (skillSeleccionada === 'todos') {
+                contadorSpan.textContent = `📊 Mostrando ${contadorVisibles} integrantes (todos)`;
+            } else {
+                contadorSpan.textContent = `🔍 Mostrando ${contadorVisibles} integrante(s) con la habilidad: ${skillSeleccionada}`;
+            }
+            
+            // Actualizar botón activo
+            filtros.forEach(btn => {
+                btn.classList.remove('activo');
+                if (btn.getAttribute('data-skill') === skillSeleccionada) {
+                    btn.classList.add('activo');
+                }
+            });
+        }
+        
+        // Agregar event listeners a los botones
+        filtros.forEach(boton => {
+            boton.addEventListener('click', () => {
+                const skill = boton.getAttribute('data-skill');
+                filtrarPorSkill(skill);
+            });
+        });
+    </script>
 
 </body>
 </html>
