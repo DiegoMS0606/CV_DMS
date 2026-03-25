@@ -5,7 +5,6 @@
     <title>Portafolio Grupal | Tecnologías Computacionales I</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="css/styles.css">
-    
 </head>
 
 <body class="home">
@@ -153,7 +152,7 @@
                 </div>
             </div>
             
-            <!-- CARLOS MIGUEL SOLANO - CON TUS HABILIDADES DEL CV -->
+            <!-- CARLOS MIGUEL SOLANO -->
             <div class="card-index" data-skills="Desarrollo Web,HTML,CSS,JavaScript,Java,Bases de Datos,MySQL,PostgreSQL,Git y GitHub">
                 <a href="cv/carlos/">
                     <img src="img/CS.jpeg" alt="Carlos Miguel Solano">
@@ -321,7 +320,6 @@
                     tarjeta.classList.remove('oculto');
                     contadorVisibles++;
                 } else {
-                    // Buscar si la skill seleccionada está en las skills de la tarjeta
                     if (skillsTarjeta && skillsTarjeta.split(',').map(s => s.trim()).includes(skillSeleccionada)) {
                         tarjeta.classList.remove('oculto');
                         contadorVisibles++;
@@ -331,14 +329,12 @@
                 }
             });
             
-            // Actualizar contador
             if (skillSeleccionada === 'todos') {
                 contadorSpan.textContent = `📊 Mostrando ${contadorVisibles} integrantes (todos)`;
             } else {
                 contadorSpan.textContent = `🔍 Mostrando ${contadorVisibles} integrante(s) con la habilidad: ${skillSeleccionada}`;
             }
             
-            // Actualizar botón activo
             filtros.forEach(btn => {
                 btn.classList.remove('activo');
                 if (btn.getAttribute('data-skill') === skillSeleccionada) {
@@ -347,7 +343,6 @@
             });
         }
         
-        // Agregar event listeners a los botones
         filtros.forEach(boton => {
             boton.addEventListener('click', () => {
                 const skill = boton.getAttribute('data-skill');
