@@ -10,9 +10,7 @@ body {
     min-height: 100vh;
 }
 
-
 /* LAYOUT */
-
 .wrapper {
     display: flex;
     max-width: 1100px;
@@ -24,7 +22,6 @@ body {
 }
 
 /* SIDEBAR */
-
 .sidebar {
     background: #2c3e50;
     color: white;
@@ -52,7 +49,6 @@ body {
 }
 
 /* SKILLS */
-
 .skills {
     margin-top: 30px;
 }
@@ -66,7 +62,6 @@ body {
 }
 
 /* CONTENT */
-
 .content {
     flex: 1;
     padding: 40px;
@@ -87,7 +82,6 @@ h2 {
 }
 
 /* BUTTON */
-
 .btn {
     display: inline-block;
     padding: 10px 15px;
@@ -102,8 +96,7 @@ h2 {
     background: #2c3e50;
 }
 
-/* 📱 RESPONSIVE */
-
+/* RESPONSIVE */
 @media (max-width: 900px) {
     .wrapper {
         flex-direction: column;
@@ -121,7 +114,6 @@ h2 {
         width: 120px;
         height: 120px;
     }
-    
 }
 
 @media (max-width: 600px) {
@@ -135,34 +127,12 @@ h2 {
 }
 
 /* =========================
-   🔵 ESTILOS SOLO PARA INDEX
+   ESTILOS SOLO PARA INDEX (UNIFICADOS)
 ========================= */
-
 .home {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
-}
-
-/* El main crece y empuja el footer */
-.home .container {
-    flex: 1;
-    max-width: 1000px;
-    margin: 30px auto;
-    padding: 20px;
-    width: 100%;
-}
-
-/* Footer siempre abajo */
-.home footer {
-    text-align: center;
-    padding: 20px;
-    opacity: 0.7;
-}
-
-
-
-.home {
     font-family: Arial, sans-serif;
     background: #0f172a;
     color: #e2e8f0;
@@ -185,9 +155,11 @@ h2 {
 
 /* CONTENEDOR */
 .home .container {
+    flex: 1;
     max-width: 1000px;
     margin: 30px auto;
     padding: 20px;
+    width: 100%;
 }
 
 /* GRID */
@@ -225,13 +197,6 @@ h2 {
     justify-content: center;
 }
 
-/* FOOTER */
-.home footer {
-    text-align: center;
-    padding: 20px;
-    opacity: 0.7;
-}
-
 .home .card-index img {
     width: 250px;
     height: 250px;
@@ -242,19 +207,25 @@ h2 {
     transition: 0.3s;
 }
 
-/* Hover */
 .home .card-index:hover img {
     transform: scale(1.1);
 }
+
 .home .card-index h3 {
     margin-top: 10px;
     font-size: 1.5rem;
 }
+
+/* FOOTER */
+.home footer {
+    text-align: center;
+    padding: 20px;
+    opacity: 0.7;
+}
+
 /* =========================
    ESTILOS PARA FILTRADO Y ETIQUETAS
-   ========================= */
-
-/* Contenedor de filtros */
+========================= */
 .filtros-container {
     background: #1e293b;
     border-radius: 12px;
@@ -315,7 +286,7 @@ h2 {
     display: none;
 }
 
-/* Etiquetas de habilidades debajo de cada tarjeta */
+/* Etiquetas de habilidades */
 .skills-tags {
     display: flex;
     flex-wrap: wrap;
@@ -345,7 +316,7 @@ h2 {
     color: #94a3b8;
 }
 
-/* Ajuste responsive para etiquetas */
+/* Ajuste responsive */
 @media (max-width: 600px) {
     .skill-tag {
         font-size: 0.65rem;
