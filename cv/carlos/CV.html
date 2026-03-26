@@ -1,491 +1,101 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Carlos Miguel Solano · CV</title>
-  <!-- Font Awesome 6 (gratuito) para iconos profesionales -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
-    }
-
-    body {
-      background: linear-gradient(145deg, #eef2f5 0%, #dbe1e8 100%);
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      padding: 2rem 1.5rem;
-      min-height: 100vh;
-    }
-
-    /* Tarjeta principal del CV */
-    .cv-card {
-      max-width: 1100px;
-      width: 100%;
-      background-color: #ffffff;
-      border-radius: 32px;
-      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.3);
-      overflow: hidden;
-      transition: transform 0.2s ease;
-    }
-
-    /* HEADER con fondo sutil y nombre grande */
-    .cv-header {
-      background: linear-gradient(105deg, #0b1e33 0%, #1a2f45 100%);
-      color: white;
-      padding: 2.5rem 3rem 2rem 3rem;
-    }
-
-    .nombre-titulo h1 {
-      font-size: 3.2rem;
-      font-weight: 700;
-      letter-spacing: -0.02em;
-      line-height: 1.1;
-      margin-bottom: 0.2rem;
-    }
-
-    .nombre-titulo .profesion-tag {
-      display: inline-block;
-      background: rgba(255,255,255,0.12);
-      backdrop-filter: blur(4px);
-      font-size: 1rem;
-      font-weight: 500;
-      padding: 0.3rem 1.2rem;
-      border-radius: 40px;
-      margin-top: 0.5rem;
-      border: 1px solid rgba(255,255,255,0.2);
-    }
-
-    /* datos personales en columnas dentro del header */
-    .datos-contacto {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 1.8rem;
-      margin-top: 1.8rem;
-      background: rgba(0, 0, 0, 0.2);
-      border-radius: 48px;
-      padding: 1rem 1.8rem;
-      backdrop-filter: blur(4px);
-      border: 1px solid rgba(255,255,255,0.1);
-    }
-
-    .datos-item {
-      display: flex;
-      align-items: center;
-      gap: 0.7rem;
-      font-size: 0.95rem;
-      font-weight: 400;
-      color: #f0f4fa;
-    }
-
-    .datos-item i {
-      font-size: 1.2rem;
-      color: #82b4ff;
-      width: 1.4rem;
-      text-align: center;
-    }
-
-    .datos-item span {
-      border-bottom: 1px dotted rgba(255,255,255,0.3);
-    }
-
-    /* CUERPO PRINCIPAL dos columnas */
-    .cv-main {
-      display: grid;
-      grid-template-columns: 1fr 2fr;
-      gap: 0;
-      background: #fff;
-    }
-
-    /* COLUMNA IZQUIERDA (perfil, competencias, idiomas) */
-    .sidebar {
-      background-color: #f8fafd;
-      padding: 2.2rem 2rem;
-      border-right: 1px solid #e2e9f2;
-    }
-
-    .section-title {
-      font-size: 1.1rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      color: #0b2b44;
-      margin-bottom: 1.2rem;
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-      border-bottom: 2px solid rgba(13, 78, 133, 0.2);
-      padding-bottom: 0.4rem;
-    }
-
-    .section-title i {
-      color: #1f5f9e;
-      font-size: 1.1rem;
-    }
-
-    /* perfil texto */
-    .perfil-texto {
-      font-size: 0.95rem;
-      line-height: 1.6;
-      color: #1f2a3e;
-      margin-bottom: 2.5rem;
-      background: white;
-      padding: 1.2rem 1.2rem;
-      border-radius: 18px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.02);
-    }
-
-    /* listas de competencias / idiomas */
-    .skill-list {
-      list-style: none;
-      margin-bottom: 2.2rem;
-    }
-
-    .skill-list li {
-      background: white;
-      margin-bottom: 0.7rem;
-      padding: 0.7rem 1rem;
-      border-radius: 40px;
-      font-size: 0.9rem;
-      font-weight: 500;
-      color: #0b1f33;
-      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.02);
-      border: 1px solid #dee9f2;
-      display: flex;
-      align-items: center;
-      gap: 0.6rem;
-    }
-
-    .skill-list li i {
-      color: #2d68b0;
-      width: 1.2rem;
-      font-size: 0.95rem;
-    }
-
-    .idioma-item {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      background: white;
-      padding: 0.7rem 1.2rem;
-      border-radius: 40px;
-      margin-bottom: 0.7rem;
-      border: 1px solid #dee9f2;
-    }
-
-    .idioma-nombre {
-      font-weight: 600;
-      color: #0f2b42;
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-    }
-
-    .idioma-nivel {
-      background: #e3edf8;
-      padding: 0.2rem 1rem;
-      border-radius: 40px;
-      font-size: 0.8rem;
-      font-weight: 600;
-      color: #1a4c7a;
-    }
-
-    /* COLUMNA DERECHA (formación, experiencia) */
-    .content {
-      padding: 2.2rem 2.2rem 2.2rem 2rem;
-      background: white;
-    }
-
-    .timeline-item {
-      margin-bottom: 2.2rem;
-      position: relative;
-    }
-
-    .item-header {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
-      align-items: baseline;
-      margin-bottom: 0.3rem;
-    }
-
-    .item-titulo {
-      font-size: 1.2rem;
-      font-weight: 700;
-      color: #0a263b;
-      letter-spacing: -0.01em;
-    }
-
-    .item-sub {
-      font-weight: 600;
-      color: #2e4d73;
-      font-size: 0.95rem;
-      margin-bottom: 0.2rem;
-    }
-
-    .item-fecha {
-      background: #e9f0f9;
-      padding: 0.2rem 1rem;
-      border-radius: 40px;
-      font-size: 0.8rem;
-      font-weight: 600;
-      color: #1a4970;
-      white-space: nowrap;
-    }
-
-    .item-lugar {
-      font-size: 0.9rem;
-      color: #5f6f84;
-      margin-bottom: 0.7rem;
-      display: flex;
-      align-items: center;
-      gap: 0.3rem;
-    }
-
-    .item-desc {
-      font-size: 0.95rem;
-      color: #1f2c3c;
-      line-height: 1.5;
-      margin-left: 0.2rem;
-      padding-left: 0.8rem;
-      border-left: 3px solid #9fb9d4;
-    }
-
-    .bullet-list {
-      list-style: none;
-      margin-top: 0.5rem;
-    }
-
-    .bullet-list li {
-      font-size: 0.95rem;
-      margin-bottom: 0.4rem;
-      display: flex;
-      gap: 0.7rem;
-      align-items: flex-start;
-      color: #1f2e41;
-    }
-
-    .bullet-list li i {
-      color: #1f5f9e;
-      font-size: 0.8rem;
-      margin-top: 0.25rem;
-      width: 1rem;
-    }
-
-    /* destacar bloque SIIA con fondo suave */
-    .destacar-experiencia {
-      background: #f2f8ff;
-      border-radius: 20px;
-      padding: 1.2rem 1.5rem 0.8rem 1.5rem;
-      margin: 1.8rem 0 1.2rem 0;
-      border: 1px solid #cbddec;
-    }
-
-    .tecnologias-stack {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.5rem;
-      margin: 0.8rem 0 0.2rem;
-    }
-
-    .tecnologia-badge {
-      background: white;
-      border: 1px solid #b5d0e8;
-      padding: 0.3rem 1rem;
-      border-radius: 40px;
-      font-size: 0.85rem;
-      font-weight: 500;
-      color: #123b61;
-      box-shadow: 0 1px 3px rgba(0,0,0,0.02);
-    }
-
-    hr {
-      border: 0;
-      border-top: 2px dotted #c6d7e9;
-      margin: 1.2rem 0;
-    }
-
-    /* pie de página sutil */
-    .cv-footer {
-      background-color: #f1f6fc;
-      padding: 0.9rem 3rem;
-      text-align: center;
-      font-size: 0.8rem;
-      color: #4f6072;
-      border-top: 1px solid #d3e1f0;
-    }
-
-    /* responsive */
-    @media (max-width: 800px) {
-      .cv-main {
-        grid-template-columns: 1fr;
-      }
-      .sidebar {
-        border-right: 0;
-        border-bottom: 1px solid #d9e4f0;
-      }
-      .cv-header {
-        padding: 2rem 1.5rem;
-      }
-      .nombre-titulo h1 {
-        font-size: 2.5rem;
-      }
-    }
-  </style>
+    <meta charset="UTF-8">
+    <title>CV - Carlos Miguel Solano</title>
+    <link rel="stylesheet" href="../../css/styles.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
-<body>
-  <div class="cv-card">
-    <!-- CABECERA con nombre y datos -->
-    <div class="cv-header">
-      <div class="nombre-titulo">
-        <h1>CARLOS MIGUEL SOLANO</h1>
-	<img src="C:\Users\Dell\Desktop\Carlos\UAEMEX\Decimo Semestre\Tecnologías 1\foto.jpg" alt="Mi foto">
-        <div class="profesion-tag">
-          <i class="fas fa-laptop-code" style="margin-right: 6px;"></i> Ing. en Computación · Desarrollador web
-        </div>
-      </div>
+<body class="cv">
 
-      <div class="datos-contacto">
-        <div class="datos-item"><i class="fas fa-map-pin"></i> <span>Tercera Privada De Ceboruco, Casa 15</span></div>
-        <div class="datos-item"><i class="fas fa-envelope"></i> <span>csolanom001@alumno.uaemex.mx</span></div>
-        <div class="datos-item"><i class="fas fa-phone-alt"></i> <span>729 102 1418</span></div>
-        <div class="datos-item"><i class="fas fa-birthday-cake"></i> <span>17 agosto 1995</span></div>
-      </div>
-    </div>
+<a href="../../index.html" class="back-btn">←</a>
 
-    <!-- CONTENIDO PRINCIPAL dos columnas -->
-    <div class="cv-main">
-      <!-- COLUMNA IZQUIERDA: perfil + competencias + idiomas -->
-      <div class="sidebar">
-        <!-- PERFIL (reescrito con estilo) -->
-        <div class="section-title"><i class="fas fa-user-circle"></i> PERFIL</div>
-        <div class="perfil-texto">
-          Estudiante de Ingeniería en Computación apasionado por la tecnología y el desarrollo de software. Busco una oportunidad para aplicar mis conocimientos académicos y habilidades técnicas en un entorno profesional. Poseo una fuerte capacidad para recopilar y analizar requerimientos de clientes, traduciendo sus necesidades en soluciones funcionales.
+<div class="wrapper">
+
+    <aside class="sidebar">
+        <img src="../../img/CS.jpeg" alt="Foto de perfil" class="profile-pic">
+
+        <h1 class="cv">Carlos Miguel Solano</h1>
+        <p class="role">Ingeniería en Computación</p>
+
+        <div class="contact">
+            <p>📍 Toluca Edo. Mex.</p>
+            <p>
+                <a href="mailto:somacsomac33@gmial.com?subject=Contacto desde portafolio&body=Hola Diego, vi tu portafolio..." title="Enviar Correo">
+                    📧 somacsomac33@gmial.com
+                </a>
+            </p>
+            <p>📱 729 102 1418</p>
         </div>
 
-        <!-- COMPETENCIAS -->
-        <div class="section-title"><i class="fas fa-code"></i> COMPETENCIAS</div>
-        <ul class="skill-list">
-          <li><i class="fab fa-java"></i> Java</li>
-          <li><i class="fas fa-database"></i> Bases de Datos: SQL</li>
-          <li><i class="fas fa-project-diagram"></i> UML</li>
-          <li><i class="fas fa-file-excel"></i> Paquetería OFFICE (Excel, PowerPoint, Word)</li>
-        </ul>
-
-        <!-- IDIOMAS (con niveles aproximados según datos) -->
-        <div class="section-title"><i class="fas fa-language"></i> IDIOMAS</div>
-        <div class="idioma-item">
-          <span class="idioma-nombre"><i class="fas fa-flag-usa"></i> INGLÉS</span>
-          <span class="idioma-nivel">Avanzado (FCE, PET)</span>
+        <div class="skills">
+            <h3>Habilidades</h3>
+            <div class="skill">HTML</div>
+            <div class="skill">CSS</div>
+            <div class="skill">JavaScript</div>
+            <div class="skill">MySQL</div>
+            <div class="skill">Git</div>
         </div>
-        <div class="idioma-item">
-          <span class="idioma-nombre"><i class="fas fa-flag-france"></i> FRANCÉS</span>
-          <span class="idioma-nivel">Intermedio</span>
-        </div>
-        <div class="idioma-item">
-          <span class="idioma-nombre"><i class="fas fa-flag-japan"></i> JAPONÉS</span>
-          <span class="idioma-nivel">Básico</span>
-        </div>
-      </div><!-- fin sidebar -->
+    </aside>
 
-      <!-- COLUMNA DERECHA: formación y experiencia -->
-      <div class="content">
-        <!-- FORMACIÓN (dos ítems) -->
-        <div class="section-title"><i class="fas fa-graduation-cap"></i> FORMACIÓN</div>
-        
-        <div class="timeline-item">
-          <div class="item-header">
-            <span class="item-titulo">Ingeniería en Computación</span>
-            <span class="item-fecha">ago 2021 - ago 2025</span>
-          </div>
-          <div class="item-lugar"><i class="fas fa-university"></i> Universidad Autónoma del Estado de México · En curso</div>
-        </div>
-        <!-- EXPERIENCIA (separada por proyectos y SIIA) -->
-        <div class="section-title" style="margin-top: 2rem;"><i class="fas fa-briefcase"></i> EXPERIENCIA</div>
+    <main class="content">
 
-        <!-- Proyecto biométrico -->
-        <div class="timeline-item">
-          <div class="item-header">
-            <span class="item-titulo">Sistema Biométrico Hospital</span>
-            <span class="item-fecha">presente</span>
-          </div>
-          <div class="item-sub">Registro biométrico de pacientes</div>
-          <ul class="bullet-list">
-            <li><i class="fas fa-chevron-right"></i> Mejorar identificación segura y optimizar procesos clínicos/administrativos.</li>
-          </ul>
-        </div>
+        <section class="card">
+            <h2>Perfil Profesional</h2>
+            <p>
+                Estudiante de Ingeniería en Computación 
+                apasionado por la tecnología y el desarrollo de software. 
+                Busco una oportunidad para aplicar mis 
+                conocimientos académicos y habilidades técnicas en un entorno profesional. 
+                Poseo una fuerte capacidad para recopilar 
+                y analizar requerimientos de clientes, 
+                traduciendo sus necesidades en soluciones funcionales.
+            </p>
+        </section>
 
-        <!-- Happening App -->
-        <div class="timeline-item">
-          <div class="item-header">
-            <span class="item-titulo">Happening · Gestión de Eventos</span>
-            <span class="item-fecha">presente</span>
-          </div>
-          <div class="item-sub">Captura y análisis de requerimientos</div>
-          <ul class="bullet-list">
-            <li><i class="fas fa-chevron-right"></i> Traducir necesidades de clientes en especificaciones del sistema.</li>
-            <li><i class="fas fa-chevron-right"></i> Aplicación de Proceso Unificado (UP) y modelado UML para planeación y gestión de eventos (proveedores, pagos, calendarización).</li>
-          </ul>
-        </div>
+        <section class="card">
+            <h2>Educación</h2>
+            <ul>
+                <li>Ingeniería en Computación - UAEMex</li>
+            </ul>
+        </section>
 
-        <!-- LA COMPU S.A. -->
-        <div class="timeline-item">
-          <div class="item-header">
-            <span class="item-titulo">LA COMPU S.A. · Gestión BD</span>
-            <span class="item-fecha">presente</span>
-          </div>
-          <div class="item-sub">Diseño e implementación de base de datos</div>
-          <ul class="bullet-list">
-            <li><i class="fas fa-chevron-right"></i> Gestión de facturas, clientes, proveedores y productos.</li>
-            <li><i class="fas fa-chevron-right"></i> Programación de tablas, operaciones CRUD y optimización de consultas.</li>
-            <li><i class="fas fa-chevron-right"></i> Integración de facturación/reportes con SQL y Java.</li>
-          </ul>
-        </div>
+        <section class="card">
+            <h2>Certificaciones</h2>
+            <ul class="certifications">
+                <li>
+                    <a href="https://www.credly.com/badges/f914c578-de90-4659-85e1-2e0e8f6e10b1" target="_blank" title="Certificado">
+                        Redes – Cisco Networking Academy
+                    </a>
+                </li>
+            </ul>
+        </section>
 
-        <!-- SIIA - BECARIO (tres meses, con stack y manejo de presión) -->
-        <div class="destacar-experiencia">
-          <div style="display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap;">
-            <span class="item-titulo" style="font-size: 1.2rem;">Becario de desarrollo · SIIA</span>
-            <span class="item-fecha" style="background: #d4e2f5;">sep 2025 - nov 2025</span>
-          </div>
-          <div class="item-lugar" style="margin-top: 0.2rem;"><i class="fas fa-map-marker-alt"></i> Toluca, Edo. Mex.</div>
-          
-          <!-- stack tecnológico con badges -->
-          <div class="tecnologias-stack">
-            <span class="tecnologia-badge">PHP</span>
-            <span class="tecnologia-badge">JavaScript</span>
-            <span class="tecnologia-badge">HTML</span>
-            <span class="tecnologia-badge">CSS</span>
-          </div>
+        <section class="card">
+            <h2>Proyecto</h2>
+            <p><strong>LA COMPU S.A. · Gestión BD</strong></p>
+            <ul>
+                <li>Diseño e implementación de base de datos</li>
+                <li>Gestión de facturas, clientes, proveedores y productos.</li>
+                <li>Integración de facturación/reportes con SQL y Java.</li>
+            </ul>
+        </section>
 
-          <ul class="bullet-list" style="margin-top: 0.8rem;">
-            <li><i class="fas fa-check-circle" style="color: #1f6fb0;"></i> Participación activa en el ciclo de desarrollo web, aplicando conocimientos en entorno real.</li>
-            <li><i class="fas fa-check-circle" style="color: #1f6fb0;"></i> Responsable de entregar módulos asignados dentro de los plazos acordados.</li>
-            <li><i class="fas fa-check-circle" style="color: #1f6fb0;"></i> Gestión del estrés y la presión de manera efectiva para asegurar calidad y cumplimiento.</li>
-          </ul>
-          <!-- (opcional) nota de aprendizaje rápido -->
-          <p style="font-size:0.9rem; margin-top:0.2rem; color:#1d4e7c;"><i class="fas fa-rocket"></i> Adquirí soltura en PHP, JS, HTML y CSS, y demostré capacidad de desempeño bajo presión.</p>
-        </div>
+        <section class="card">
+            <h2>Idiomas</h2>
+            <p>Inglés C1</p>
+            <p>Frances B1</p>
+            <p>Japones A2</p>
+        </section>
 
-        <!-- Habilidades adicionales (mencionadas en el PDF original) -->
-        <hr>
-        <div style="display: flex; flex-wrap: wrap; gap: 1.5rem; justify-content: space-between; font-size: 0.9rem;">
-          <span><i class="fas fa-database" style="color: #1f5f9e;"></i> <strong>SQL</strong> (Consultas, CRUD)</span>
-          <span><i class="fas fa-chart-bar"></i> <strong>Office</strong> avanzado</span>
-          <span><i class="fas fa-code-branch"></i> <strong>UML</strong> / UP</span>
-        </div>
-      </div><!-- fin content -->
-    </div><!-- fin cv-main -->
+        <section class="card">
+            <h2>Links</h2>
+            <a href="https://github.com/csolanom001" target="_blank" class="btn">GitHub</a>
+        </section>
 
-    <!-- footer opcional con fecha o lema -->
-    <div class="cv-footer">
-      <i class="fas fa-sync-alt"></i> Actualizado 2026 · CV en línea · Disponibilidad para colaborar en proyectos tecnológicos
-    </div>
-  </div><!-- fin cv-card -->
+    </main>
+
+</div>
+
 </body>
 </html>
